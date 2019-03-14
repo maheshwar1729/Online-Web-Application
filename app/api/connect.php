@@ -1,8 +1,8 @@
 <?php
     class db{
         // Properties
-        private $dbhost = 'localhost';
-        private $dbuser = 'root';
+        private $dbhost = 'x.x.x.8';
+        private $dbuser = 'vm_www';
         private $dbpass = '';
         private $dbname = 'mach';
 
