@@ -1,13 +1,16 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "mach";
-    
-    
-    
-    $mysqli = new mysqli($servername, $username, $password, $database);
-    // Check connection
-    if ($mysqli->connect_error) {
-        die("Connection failed: " . $mysqli->connect_error);
+    class db{
+        // Properties
+        private $dbhost = 'localhost';
+        private $dbuser = 'root';
+        private $dbpass = '';
+        private $dbname = 'mach';
+
+        // Connect
+        public function connect(){
+            $mysql_connect_str = "mysql:host=$this->dbhost;dbname=$this->dbname";
+            $dbConnection = new PDO($mysql_connect_str, $this->dbuser, $this->dbpass);
+            $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $dbConnection;
+        }
     }
