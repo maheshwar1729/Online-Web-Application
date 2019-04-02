@@ -1,9 +1,6 @@
 <?php
 include("db.php");
- 
 $req = $conn->query("SELECT * FROM CART");
-
-
 while($res = $req->fetch_assoc())
 {
 	print "inside";
@@ -18,6 +15,5 @@ while($res = $req->fetch_assoc())
 	$req3 = $conn->prepare("UPDATE ITEMS SET quantity='$quantity' WHERE type='$type'");
 }
 $req = $conn->query("DELETE FROM CART");
- 
 header("Location:home.html");
 ?>
