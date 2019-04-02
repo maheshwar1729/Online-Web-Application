@@ -1,11 +1,7 @@
 <?php
-
 include("db.php");
- 
-
 $req = $conn->query("SELECT * FROM ITEMS ORDER BY ID"); 
 ?>
- 
 <html>
 <head>    
     <title>CLOTHING STORE: Edit Items in Store</title>
@@ -15,19 +11,16 @@ table {
     border-collapse: collapse;
     width: 70%;
 }
-
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-
 tr:nth-child(even) {
     background-color: #dddddd;
 }
 </style>
 </head>
-
 <body
     <h1>Here comes the ITEMS in this Store</h1>
 <p></p>
@@ -40,8 +33,7 @@ tr:nth-child(even) {
 	<th style = "color:green;">QUANTITY</th>
         <th style = "color:green;">Options</th>
         </tr>
-        <?php 
-         
+        <?php   
         while($row = $req->fetch_assoc()) {         
             echo "<tr>";
             echo "<td>".$row['type']."</td>";
@@ -50,12 +42,8 @@ tr:nth-child(even) {
 	    echo "<td>".$row['size']."</td>";
 	    echo "<td>".$row['price']."</td>";
 	    echo "<td>".$row['quantity']."</td>";  
-            echo "<td><a href=\"itemedit.php?id=$row[ID]\"><button  type=\"button\">EDIT</button></a><a href=\"delitem.php?id=$row[ID]\" onClick=\"return confirm('Are you sure? Delete')\"><button  type=\"button\">DELETE</button></a></td>";  
-			
-			
-	    
+            echo "<td><a href=\"itemedit.php?id=$row[ID]\"><button  type=\"button\">EDIT</button></a><a href=\"delitem.php?id=$row[ID]\" onClick=\"return confirm('Are you sure? Delete')\"><button  type=\"button\">DELETE</button></a></td>";
         }
-
 echo "<br/><a href='home.html'>Sign Out</a>";
 echo "<br/><a href='accounts.php'>Edit Accounts <br /></a>";
         ?>
