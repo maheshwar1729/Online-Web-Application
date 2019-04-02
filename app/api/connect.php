@@ -5,7 +5,6 @@
         private $dbuser = 'vm_www';
         private $dbpass = '';
         private $dbname = 'mach';
-
         // Connect
         public function connect(){
             $mysql_connect_str = "mysql:host=$this->dbhost;dbname=$this->dbname";
