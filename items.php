@@ -1,18 +1,13 @@
 <?php
-
 include("db.php");
 $user = $_GET['id'];
-
 $search = $conn->query("SELECT EMAIL FROM ACCOUNTS where ID=$user");
 while($row = $search->fetch_assoc()) 
   {
 	$name = $row['EMAIL'];
   }
-
-
 $req = $conn->query("SELECT * FROM ITEMS"); 
 ?>
- 
 <html> 
 <head>    
     <title>Clothing Store:Items</title>
@@ -22,22 +17,18 @@ table {
     border-collapse: collapse;
     width: 70%;
 }
-
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-
 tr:nth-child(even) {
     background-color: #dddddd;
 }
 </style>
 </head>
- 
 <body>
     <h1>List of all Items</h1>
-
     <table width='100%' border=10>
         <th style = "color:green;">TYPE</th>
 	<th style = "color:green;">BRAND</th>
@@ -60,7 +51,6 @@ tr:nth-child(even) {
 	    echo "<td>".$row['quantity']."</td>";  
             echo "<td><a href=\"addcart.php?id=$row[ID]&user=$user\"><button  type=\"button\">ADD</button></a></td>";
          }
-
 echo "<br/><a href=\"cartitems.php?user=$user\">view items in Cart</a>";
 echo "<br/><a href=\"delacc.php?id=$user\">Delete my Account</a>";
 echo "<br/><a href='signout.php'>Sign Out</a>";
