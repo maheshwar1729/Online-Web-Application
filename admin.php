@@ -7,9 +7,7 @@ include("db.php");
 if(isset($_POST["submit"])) 
   {    
 	$box1 =$_POST['username'];
-    $box2=$_POST['password'];
-
-        
+    $box2=$_POST['password']; 
     if(empty($box1) || empty($box2)) 
 	  { 
 		echo "<br/><a href='admin.html'>Sorry to ask: Please Sign in again</a>";           
@@ -24,9 +22,7 @@ if(isset($_POST["submit"]))
 		if(empty($box2)) 
 		  {
         	echo "<font color='red'> Password is not entered </font><br/>";
-          } 
-	
-       
+          }
       } 
 	else 
 	  { 
@@ -39,15 +35,13 @@ if(isset($_POST["submit"]))
 		else
 		  {
 			echo "<font color='red'> Only Admins are allowed: WRONG CREDENTIALS</font><br/>";
-		  }
-        
+		  }       
        }
   }
 else
   {
 	echo "Troubleshoot your admin page";
   }
-
 ?>
 </body>
 </html>
